@@ -1,0 +1,217 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+
+  background-color: #ffecd4;
+  color: #222222;
+
+  font-family: "Alegreya Sans", sans-serif;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 15px 4%;
+
+  background-color: #ff9151;
+
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+}
+
+footer{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  position: static;
+  bottom: 0;
+  z-index: 100;
+  margin: 10rem auto 0;
+
+  justify-content: space-between;
+  background-color: #222222;
+  color: #ffffff;
+  padding: 15px 2%;
+
+}
+
+footer p{
+  align-self: center;
+  grid-column: 1/1;
+}
+
+footer ul{
+  grid-column: 3/3;
+}
+
+footer a{
+  display: inline-block;
+  text-decoration: none;
+  color: #ffffff;
+  transition: color 0.25s, transform 0.25s ease;
+}
+
+footer a:hover{
+  color: aqua;
+  transform: scale(1.02);
+}
+
+.logo {
+  display: inline-block;
+
+  color: #fff2e1;
+
+  font-size: 1.5rem;
+  font-weight: bold;
+
+  text-decoration: none;
+
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.logo:hover {
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+
+  gap: 1.5rem;
+}
+
+header nav > a,
+.menuDropdown > a,
+.dropdownToggle {
+  display: inline-block;
+
+  padding: 0;
+  border: none;
+
+  background: none;
+  color: #fff2e1;
+
+  font: inherit;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+header nav > a:hover,
+.menuDropdown > a:hover,
+.dropdownToggle:hover,
+.dropdownToggle:focus {
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+.menuDropdown,
+.dropdownMenu {
+  position: relative;
+}
+
+.menuDropdown::after,
+.dropdownMenu::after {
+  content: "";
+
+  position: absolute;
+  top: 100%;
+  left: 0;
+
+  width: 100%;
+  height: 10px;
+}
+
+.menuDropdown::after {
+  left: 0;
+}
+
+.dropdownMenu::after {
+  right: 0;
+}
+
+.menuDropdownList,
+.dropdownList {
+  position: absolute;
+  top: calc(100% + 10px);
+
+  z-index: 110;
+
+  min-width: 180px;
+
+  margin: 0;
+  padding: 8px;
+
+  list-style: none;
+
+  background-color: #ffffff;
+
+  border-radius: 10px;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+
+  opacity: 0;
+  visibility: hidden;
+
+  transform: translateY(-5px);
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0.2s ease;
+}
+
+.menuDropdownList {
+  left: 0;
+}
+
+.dropdownList {
+  right: 0;
+}
+
+.menuDropdown:hover .menuDropdownList,
+.menuDropdown:focus-within .menuDropdownList,
+.dropdownMenu:hover .dropdownList,
+.dropdownMenu:focus-within .dropdownList {
+  opacity: 1;
+  visibility: visible;
+
+  transform: translateY(0);
+}
+
+.menuDropdownList a,
+.dropdownList a {
+  display: block;
+
+  padding: 10px 14px;
+
+  color: #333333;
+
+  text-decoration: none;
+
+  border-radius: 6px;
+
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.menuDropdownList a:hover,
+.dropdownList a:hover {
+  background-color: #ffecd4;
+  color: #ff7a2d;
+}
